@@ -43,16 +43,16 @@ export class NotebookPage implements OnInit {
   async updateStorage()
   {
     let person:Person={name:this.personName,email:this.personEmail}
-    this.storage.create("person",JSON.stringify(person));
-    this.storage.create("theme","light");
+    await this.storage.create("person",JSON.stringify(person));
+    await this.storage.create("theme","light");
   }
   async deleteFromStorage()
   {
-
+    await this.storage.delete("theme");
   }
   async clearStorage()
   {
-
+    await this.storage.clear();
   }
 
   ngOnInit() {
