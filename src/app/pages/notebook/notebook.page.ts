@@ -24,7 +24,21 @@ export class NotebookPage implements OnInit {
   }
   async getStorage()
   {
-
+    await this.storage.read("theme").then((data:any)=>{
+      if(data.value)
+        this.themeName=data.value;
+      else
+        this.themeName="";
+    })
+    await this.storage.read("person").then((data:any)=> {
+      if(data.value)
+      {
+        let p=JSON.parse(data.value);
+        this.person=p;
+      }
+      else
+        this.person={name:"",email:""};
+    })
   }
   async updateStorage()
   {
