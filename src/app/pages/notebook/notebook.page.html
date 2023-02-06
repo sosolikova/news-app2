@@ -16,18 +16,21 @@
           <ion-input type="text" [(ngModel)]="personEmail" placeholder="Enter email" required></ion-input>
         </ion-item>
 
-        <ion-button color="dark" fill="clear" size="full" (click)="setStorage()">Set storage data</ion-button>
+        <ion-button color="success" fill="clear" size="full" (click)="setStorage()">Set storage data</ion-button>
         <ion-button color="success" size="full" (click)="getStorage()">Get storage data</ion-button>
         <ion-button color="success" fill ="clear" size="full" (click)="updateStorage()">Update storage data</ion-button>
-        <ion-button color="dark" fill="clear" size="full" (click)="deleteFromStorage()">Delete storage</ion-button>
-        <ion-button color="dark" fill="clear" size="full" (click)="clearStorage()">Clear storage</ion-button>
+        <ion-button color="success" fill="clear" size="full" (click)="deleteFromStorage()">Delete storage</ion-button>
+        <ion-button color="success" fill="clear" size="full" (click)="clearStorage()">Clear storage</ion-button>
 
+        <ion-label position="floating">Get LocalStorage theme:</ion-label>
         <ion-item>
-          Get LocalStorage theme : {{ themeName }}
+           {{ themeName }}
         </ion-item>
+        <ion-label position="floating">Get LocalStorage person:</ion-label>
         <ion-item>
-          Get LocalStorage person : {{ person?.name }} : {{ person?.email }}
+          {{ person.name }}  {{ person.email }}
         </ion-item>
+
       </ion-card-content>
     </ion-card>
   </div>
