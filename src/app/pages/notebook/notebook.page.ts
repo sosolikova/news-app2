@@ -18,7 +18,9 @@ export class NotebookPage implements OnInit {
 
   setStorage()
   {
-
+    let person:Person={name:this.personName,email:this.personEmail}
+    this.storage.create("person",JSON.stringify(person));
+    this.storage.create("theme","dark");
   }
   async getStorage()
   {
