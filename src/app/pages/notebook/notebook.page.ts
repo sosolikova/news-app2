@@ -42,7 +42,9 @@ export class NotebookPage implements OnInit {
   }
   async updateStorage()
   {
-
+    let person:Person={name:this.personName,email:this.personEmail}
+    this.storage.create("person",JSON.stringify(person));
+    this.storage.create("theme","light");
   }
   async deleteFromStorage()
   {
