@@ -17,7 +17,7 @@ export class NewsapiService {
     ):Observable<NewsResponse> {
     return this.http.get<NewsResponse>(
       this.topHeadlinesPath+
-      `?country=${country}$category=${category}$pageSize=10&apiKey=${environment.apiKey}`
+      `?country=${country}&category=${category}&pageSize=10&apiKey=${environment.apiKey}`
     );
   }
 }
