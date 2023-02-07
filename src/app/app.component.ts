@@ -6,13 +6,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Obecné', url: '/folder/Inbox', icon: 'earth' },
-    { title: 'Business', url: '/folder/Outbox', icon: 'cash' },
-    { title: 'Sport', url: '/folder/Favorites', icon: 'bicycle' },
-    { title: 'Umění', url: '/folder/Archived', icon: 'videocam' },
-    { title: 'Technologie', url: '/folder/Trash', icon: 'laptop' },
-    { title: 'Zdraví', url: '/folder/Spam', icon: 'medkit' },
-    { title: 'Věda', url: '/folder/Spam', icon: 'rocket' },
+    { title: 'General', url: '/folder/general', icon: 'earth' },
+    { title: 'Business', url: '/folder/business', icon: 'cash' },
+    { title: 'Sports', url: '/folder/sports', icon: 'bicycle' },
+    { title: 'Entertainment', url: '/folder/entertainment', icon: 'videocam' },
+    { title: 'Technology', url: '/folder/technology', icon: 'laptop' },
+    { title: 'Health', url: '/folder/health', icon: 'medkit' },
+    { title: 'Science', url: '/folder/science', icon: 'rocket' },
   ];
   constructor() {}
 }
