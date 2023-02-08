@@ -16,14 +16,15 @@ export class NotebookPage implements OnInit {
 
   constructor(private storage:StorageService) { }
 
-  setStorage()
+  async setGetStorage()
   {
+    // set storage data
     let person:Person={firstname:this.personFirst,surname:this.personSurname}
     this.storage.create("person",JSON.stringify(person));
     this.storage.create("theme","dark");
-  }
-  async getStorage()
-  {
+
+
+    // get storage data
     await this.storage.read("theme").then((data:any)=>{
       if(data.value)
         this.themeName=data.value;
@@ -44,12 +45,8 @@ export class NotebookPage implements OnInit {
   {
     let person:Person={firstname:this.personFirst,surname:this.personSurname}
     await this.storage.create("person",JSON.stringify(person));
-    await this.storage.create("theme","light");
   }
-  async deleteFromStorage()
-  {
-    await this.storage.delete("theme");
-  }
+
   async clearStorage()
   {
     this.person.firstname = '';
@@ -59,14 +56,7 @@ export class NotebookPage implements OnInit {
     await this.storage.clear();
   }
 
-  getEmail()
-  {
-    let firstname = this.person.firstname.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
-    let surname = this.person.surname.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
-    firstname = firstname.toLowerCase();
-    surname = surname.toLowerCase();
-    return firstname + surname;
-  }
+
   getFirstname()
   {
     let firstname = this.person.firstname.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
@@ -94,7 +84,7 @@ export class NotebookPage implements OnInit {
     let letterFirstname = firstname.toUpperCase().substring(0,2);
     return letterFirstname;
   }
-  
+
   ngOnInit() {
   }
 
